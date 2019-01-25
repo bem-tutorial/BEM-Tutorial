@@ -1,0 +1,279 @@
+<html lang="de"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BEM-Methologie</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 300;
+        }
+
+
+        #menuleiste {
+
+            width: 100%;
+            height: 40px;
+            background-color: #e0e0e0;
+            border-bottom: 1px solid gray;
+
+        }
+
+        #logo {
+
+            padding: 10px 0 0 20px;
+            font-weight: bold;
+            font-size: 120%;
+            float: left;
+
+        }
+
+        #buttondiv {
+
+            float: right;
+            padding: 5px 10px 0 0;
+            
+
+        }
+
+        #runbutton {
+
+            font-size: 120%;
+
+        }
+        #toggles{
+
+            width: 180.5px;
+            margin: 0 auto;
+            list-style: none;
+            border: 1px solid gray;
+            border-radius: 3px;
+            padding: 0;
+            
+            height: 27px;
+            
+            
+
+        }
+
+        #toggles li  {
+
+            float: left;
+            border-right: 1px solid gray;
+            padding: 5px 7px;
+
+        }
+        .clear {
+
+            clear:both;
+
+        }
+
+        .codeContainer {
+
+            
+            height: 100%;
+            width: 50%;
+            float: left;
+            position: relative;
+            
+
+        }
+
+        .codeLabel {
+
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: darkgray;
+            border-radius: 5px;
+            padding: 4px;
+        
+        }
+
+        .codeContainer textarea {
+
+            width:100%;
+            height: 100%;
+            border: none;
+            border-right: 1px solid gray;
+            font-family: monotype;
+            font-size: 90%;
+            padding: 5px;
+            box-sizing: border-box;
+
+        }
+
+        #CSSContainer, #JSContainer {
+
+            display: none;
+
+        }
+
+        iframe {
+
+            height: 100%;
+            border:none;
+            position: relative;
+            width: 100%;
+           
+            
+
+        }
+
+             
+
+        .selected {
+
+            background-color: gray;
+
+        }
+
+        #resultContainer {
+            padding: 60px;
+        }
+
+
+    </style>
+
+<script src="chrome-extension://ocggccaacacpienfcgmgcihoombokbbj/pages/client/livestartpage-message-add.js"></script></head>
+
+<body cz-shortcut-listen="true">
+
+    <div id="wrapper">
+
+        <div id="menuleiste">
+
+            <div id="logo">
+                Bilde das Beispiel nach und drücke dann rechts auf Run
+            </div>
+
+            <div id="buttondiv">
+
+                <button id="runButton">Run</button>
+
+            </div>
+
+
+
+            <ul id="toggles">
+
+                <li class="toggle selected">HTML</li>
+                <li class="toggle selected">CSS</li>
+                <li class="toggle selected">Resultat</li>
+
+            </ul>
+
+
+        </div>
+
+        <div class="clear"></div>
+        <div class="codeContainer" id="HTMLContainer" style="height: 929px; width: 25%;">
+
+            <div class="codeLabel">HTML</div>
+
+            <textarea id="HTMLCode">
+
+                &lt;button&gt;
+                    Normaler Knopf
+                &lt;/button&gt;
+                &lt;button&gt;
+                    Erfolgreich Knopf
+                &lt;/button&gt;
+                &lt;button&gt;
+                    Gefahren Knopf
+                &lt;/button&gt;
+       
+        </textarea>
+
+        </div>
+
+        <div class="codeContainer" id="CSSContainer" style="height: 929px; display: block; width: 25%;">
+
+            <div class="codeLabel">CSS</div>
+
+            <textarea id="CSSCode">.button {
+                display: inline-block;
+                border-radius: 3px;
+                padding: 7px 12px;
+                border: 1px solid #D5D5D5;
+                background-image: linear-gradient(#EEE, #DDD);
+                font: 700 13px/18px Helvetica, arial;
+              
+            }
+            .button--state-success {
+                color: #FFF;
+                background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+                border-color: #4A993E;
+            }
+            .button--state-danger {
+                color: #900;
+            }</textarea>
+
+        </div>
+
+
+        <div class="codeContainer" id="ResultContainer" style="height: 929px; width: 25%;">
+
+            <div class="codeLabel">Result</div>
+
+            <iframe id="resultatFrame"></iframe>
+
+        </div>
+
+
+    </div>
+
+
+
+    <script type="text/javascript">
+
+
+        var fensterHoehe = $(window).height();
+        var menuLeistenHoehe = $("#menuleiste").height();
+        var codeContainerHoehe = fensterHoehe - menuLeistenHoehe;
+
+        $(".codeContainer").height(codeContainerHoehe + "px");
+
+
+        $(".toggle").click(function () {
+
+            $(this).toggleClass("selected");
+
+            var activeDiv = $(this).html();
+
+            $("#" + activeDiv + "Container").toggle();
+
+            var angezeigteDivs = $(".codeContainer").filter(function () {
+
+                return ($(this).css("display") != "none");
+
+            }).length;
+
+            var breite = 100 / angezeigteDivs;
+
+            $(".codeContainer").css("width", breite + "%");
+
+
+        });
+
+        $("#runButton").click(function () {
+
+            $("iframe").contents().find("html").html('<style>' + $("#CSSCode").val() + '</style>' + $("#HTMLCode").val());
+
+            document.getElementById("resultatFrame").contentWindow.eval($("#JSCode").val());
+        });
+
+
+
+
+
+    </script>
+
+
+
+</body></html>

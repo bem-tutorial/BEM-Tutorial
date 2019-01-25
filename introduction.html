@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+
+
+    <title>BEM-Methology</title>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div id="start"></div>
+
+    <div class="navbar">
+
+        <div class="dropdown">
+
+            <a class="link color-white" href="index.html"> <button class="dropbtn">BEM</button></a>
+
+
+
+        </div>
+
+        <div class="dropdown">
+
+            <a class="link color-white" href="howtouse.html"><button class="dropbtn">How to use</button></a>
+
+
+            <div class="dropdown-content">
+
+                <a class="link" href="howtouse.html#easy">Easy</a>
+                <a class="link" href="howtouse.html#modular">Modular</a>
+                <a class="link" href="howtouse.html#flexible">Flexible</a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="dropdown">
+
+            <a class="link color-white" href="naming.html"><button class="dropbtn">Benennung</button></a>
+
+
+            <div class="dropdown-content">
+
+                <a class="link" href="naming.html#block">Block</a>
+                <a class="link" href="naming.html#element">Element</a>
+                <a class="link" href="naming.html#modifier">Modifier</a>
+                <a class="link" href="naming.html#example2">Beispiel</a>
+
+            </div>
+
+        </div>
+
+        <div class="dropdown">
+            <a class="link color-white" href="quiz.html"><button class="dropbtn">Quiz</button></a>
+
+
+
+        </div>
+
+        <div class="code-background"></div>
+
+        <div class="panel-naming panel">
+            <h1>Einleitung</h1>
+            <p>Auf kleineren Broschüren-Websites ist es normalerweise kein großes Problem, wie Sie Ihre Stile
+                organisieren.
+                Du kommst rein, schreibst CSS oder vielleicht sogar SASS. Sie kompilieren alles in einem einzigen
+                Stylesheet mit den Produktionseinstellungen von SASS und fassen es dann zusammen, um alle Stylesheets
+                aus
+                Modulen in einem ordentlichen Paket zusammenzufassen.
+
+                Bei größeren, komplexeren Projekten ist die Organisation Ihres Codes jedoch auf mindestens drei Arten
+                der
+                Schlüssel zur Effizienz: Sie beeinflusst, wie lange Sie zum Schreiben von Code benötigen und wie viel
+                Code
+                Sie dafür benötigen schreiben Sie und wie viel Ihr Browser laden muss. Dies ist besonders wichtig, wenn
+                Sie
+                mit Themen-Teams zusammenarbeiten und hohe Leistung unerlässlich ist.</p>
+        </div>
+        <div class="panel-introduction panel" id="methode">
+
+            <h1>Methoden</h1>
+
+            <p>
+                Es gibt viele Methoden, um den CSS-Fußabdruck zu reduzieren, die Zusammenarbeit zwischen Programmierern
+                zu
+                organisieren und große CSS-Codebasen zu pflegen. Dies ist bei großen Projekten wie Twitter, Facebook
+                und
+                Github offensichtlich, andere Projekte werden jedoch häufig schnell zu einem „riesigen
+                CSS-Dateiformat“.</p>
+
+
+
+            <div class="row">
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>OOCSS</h2>
+                        <div>Container und Inhalt mit CSS-Objekten trennen.</div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>SMACSS</h2>
+                        <div>
+                            Style-Guide zum Schreiben von CSS mit fünf Kategorien für CSS-Regeln</div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>SUITCSS</h2>
+                        <div>
+                            Strukturierte Klassennamen und sinnvolle Bindestriche</div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>Atomic</h2>
+                        <div>
+                            Stile in atomare oder unteilbare Stücke zerlegen</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="panel-naming panel" id="block-element-modifier">
+            <h1>Blocks, Elements and Modifiers</h1>
+            <div class="row">
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>Blocks</h2>
+                        <div>Standalone-Entität, die für sich allein sinnvoll ist.</div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>Elements</h2>
+                        <div>
+                            Ein Teil eines Blocks, der keine eigenständige Bedeutung hat und bedeutungsmässig an seinen
+                            Block gebunden ist
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>Modifiers</h2>
+                        <div>Ein Teil eines Blocks, der keine eigenständige Bedeutung hat
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div><h2 id="example1">Lösung</h2><button class="button"> Normaler Knopf </button> <button class="button button--state-success"> Erfolgreich Knopf
+                    </button> <button class="button button--state-danger"> Gefahren Knopf </button></div>
+        <div class="iframe">
+            <iframe src="beispiel.html"></iframe></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="panel-howtouse panel" id="benefits">
+            <h1>Vorteile</h1>
+            <h2>Blocks, Elements and Modifiers</h3>
+                <div class="row">
+                    <div class="column" id="modular">
+                        <div class="advantage">
+                            <h3>Modularität</h3>
+                            <div>
+                                Blockstile sind niemals von anderen Elementen auf einer Seite abhängig, sodass Sie nie
+                                Probleme beim Kaskadieren haben.
+
+                                Sie erhalten auch die Möglichkeit, Blöcke von Ihren abgeschlossenen Projekten auf neue
+                                zu
+                                übertragen.</div>
+
+
+                        </div>
+                    </div>
+                    <div class="column" id="modular">
+                        <div class="advantage">
+                            <h3>
+                                Wiederverwendbarkeit</h3>
+                            <div>
+
+                                Indem Sie unabhängige Blöcke auf unterschiedliche Weise zusammenstellen und auf
+                                intelligente Weise wiederverwenden, wird der CSS-Code reduziert, den Sie verwalten
+                                müssen.
+
+                                Mit einer Reihe von Stilvorgaben können Sie eine Bibliothek mit Blöcken erstellen,
+                                wodurch
+                                Ihr CSS sehr effektiv wird.
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column" id="modular">
+                        <div class="advantage">
+                            <h3>
+                                Struktur
+                            </h3>
+                            <div>
+                                Die BEM-Methode verleiht Ihrem CSS-Code eine solide Struktur, die einfach und leicht
+                                verständlich bleibt.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+
+
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>

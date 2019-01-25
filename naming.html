@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+
+
+    <title>BEM-Methology</title>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div id="start"></div>
+
+    <div class="navbar">
+        <div class="dropdown">
+
+            <a class="link color-white" href="index.html"> <button class="dropbtn">BEM</button></a>
+
+
+
+        </div>
+
+
+
+        <div class="dropdown">
+
+            <a class="link color-white" href="howtouse.html"><button class="dropbtn">How to use</button></a>
+
+
+            <div class="dropdown-content">
+
+                <a class="link" href="howtouse.html#easy">Easy</a>
+                <a class="link" href="howtouse.html#modular">Modular</a>
+                <a class="link" href="howtouse.html#flexible">Flexible</a>
+
+            </div>
+
+        </div>
+
+        <div class="dropdown">
+
+            <a class="link color-white" href="introduction.html"><button class="dropbtn">Einführung</button></a>
+
+
+            <div class="dropdown-content">
+
+                <a class="link" href="introduction.html#methode">Methoden</a>
+                <a class="link" href="introduction.html#block-elements-modifier">Block, Element und Modifier</a>
+                <a class="link" href="introduction.html#example1">Beispiel</a>
+                <a class="link" href="introduction.html#benefits">Vorteile</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="dropdown">
+            <a class="link color-white" href="quiz.html"><button class="dropbtn">Quiz</button></a>
+
+
+
+        </div>
+
+        <div class="code-background"></div>
+        <div class="panel-introduction panel">
+            <h1>Benennung</h1>
+            <p>
+                Es ist eine bekannte Tatsache, dass der richtige styleguide die Entwicklungsgeschwindigkeit, das
+                Debugging und die Implementierung neuer Funktionen in altem Code erheblich steigern kann. Leider werden
+                die meisten CSS-Codebasen manchmal ohne Struktur- oder Namenskonventionen entwickelt. Dies führt
+                langfristig zu einer uneinhaltbaren CSS-Codebase.
+
+                Der BEM-Ansatz stellt sicher, dass jeder, der an der Entwicklung einer Website beteiligt ist, mit einer
+                einzigen Codebasis arbeitet und dieselbe Sprache spricht. Durch die richtige Benennung werden Sie auf
+                die Änderungen im Design der Website vorbereitet.</p>
+            <h2>DOM (Document
+                Object Model)</h2>
+            <p>Der HTML, den sie schreiben wird vom Browser analysiert und vom Browser umgewandelt und im DOM (Document
+                Object Model)
+                angezeigt. Wenn der HTML Code Fehler aufweist wird dieser meistens vom Browser behoben, dieser Code
+                wird dann im DOM vorhanden sein und kann mit CSS formatiert werden. Z.B. wenn in einer Tabelle das
+                Element tbody weggelassen wird, ist das der Fall. DOM wird vom World Wide Web Consortium definiert.
+                Eine Implementierung, die der DOM-Spezifikation genügt, besteht im Sinne der objektorientierten
+                Programmierung aus einem Satz von Klassen zusammen mit deren Methoden und Attributen. Zudem stellt DOM
+                eine Spezifikation der Programmierschnittstelle dar, welche die XML und HTML Elemente in einer
+                Baumstruktur darstellt.</p>
+
+        </div>
+
+        <div class="panel panel-naming" id="block">
+            <h1>Block</h1>
+            <p>
+                Schließt eine eigenständige Einheit ein, die eigenständig aussagekräftig ist. Während Blöcke
+                verschachtelt sein können und miteinander interagieren, bleiben sie bedeutungsmässig gleich. Es gibt
+                keine
+                Rangfolge oder Hierarchie. Ganzheitliche Entitäten ohne DOM-Darstellung (z. B. Controller oder Modelle)
+                können ebenfalls Blöcke sein.</p>
+            <div class="row">
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>HTML</h2>
+                        <div>
+                            Jeder DOM-Knoten kann ein Block sein, wenn er einen Klassennamen akzeptiert.</div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>CSS</h2>
+                        <div>
+                            <ul class="list-without-points">
+                                <li>Verwenden Sie nur den Klassennamen-Selektor</li>
+                                <li>
+                                    Kein Tag-Name oder IDs</li>
+                                <li>
+                                    Keine Abhängigkeit von anderen Blöcken / Elementen auf einer Seite</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>Benennung</h2>
+                        <div>
+                            Blocknamen können aus lateinischen Buchstaben, Ziffern und Bindestrichen bestehen. Um eine
+                            CSS-Klasse zu bilden, fügen Sie ein kurzes Präfix für den Namensraum hinzu.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel panel-howtouse" id="element">
+            <h1>Element</h1>
+            <p>
+                Teile eines Blocks und haben keine eigenständige Bedeutung. Jedes Element ist semantisch an seinen
+                Block gebunden</p>
+            <div class="row">
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>HTML</h2>
+                        <div>
+
+                            Jeder DOM-Knoten innerhalb eines Blocks kann ein Element sein. Innerhalb eines gegebenen
+                            Blocks sind alle Elemente semantisch gleich.</div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>CSS</h2>
+                        <div>
+                            <ul class="list-without-points">
+                                <li>Verwenden Sie nur den Klassennamen-Selektor</li>
+                                <li>
+                                    Kein Tag-Name oder IDs</li>
+                                <li>
+                                    Keine Abhängigkeit von anderen Blöcken / Elementen auf einer Seite</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="modular">
+                    <div class="advantage">
+                        <h2>Benennung</h2>
+                        <div>
+                            Elementnamen können aus lateinischen Buchstaben, Ziffern, Bindestrichen und Unterstrichen
+                            bestehen. Die CSS-Klasse besteht aus Blocknamen und zwei Unterstrichen plus Elementnamen
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+            <div class="panel panel-introduction" id="modifier">
+                <h1>Modifikator</h1>
+                <p>
+                    Flags auf Blöcken oder Elementen. Verwenden Sie sie, um Aussehen, Verhalten oder den Status zu
+                    ändern.</p>
+                <div class="row">
+                    <div class="column">
+                        <div class="advantage">
+                            <h2>HTML</h2>
+                            <div>
+
+
+                                Modifier ist ein zusätzlicher Klassenname, den Sie einem Block- / Element-DOM-Knoten
+                                hinzufügen. Fügen Sie Modifiziererklassen nur zu Blöcken / Elementen hinzu, die sie
+                                modifizieren, und behalten Sie die ursprüngliche Klasse bei</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="advantage">
+                            <h2>CSS</h2>
+                            <div>
+                                <ul class="list-without-points">
+                                    <li>Verwenden Sie nur den Klassennamen-Selektor</li>
+                                    <li>
+                                        Kein Tag-Name oder IDs</li>
+                                    <li>
+                                        Keine Abhängigkeit von anderen Blöcken / Elementen auf einer Seite</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="advantage">
+                            <h2>Benennung</h2>
+                            <div>
+                                Namen von Modifizierern können aus lateinischen Buchstaben, Ziffern, Bindestrichen und
+                                Unterstrichen bestehen. Die CSS-Klasse besteht aus dem Namen eines Blocks oder Elements
+                                und zwei Bindestrichen: .block-mod oder .block__elem-mod und .block-color-black mit
+                                .block-color-red. Leerzeichen in komplizierten Modifikatoren werden durch Bindestrich
+                                ersetzt.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="quiz-div"> 
+                <h2 id="example2">Lösung</h2>
+                <button id="print-solution">Lösung anzeigen</button>
+                <p id="solution-example2" class="correct">&lt;form class=&quot;form form--theme-xmas
+                    form--simple&quot;&gt; <br>
+                    &lt;input class=&quot;form__input&quot; type=&quot;text&quot; /&gt; <br>
+                    &lt;input class=&quot;form__submit form__submit--disabled&quot; type=&quot;submit&quot; /&gt; <br>
+                    &lt;/form&gt;
+                </p>
+            </div>
+           
+
+
+            <div><iframe class="iframe" src="beispiel2.html"></iframe></div>
+
+
+            <div>
+
+
+
+
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+                <script>
+
+                    document.getElementById("print-solution").onclick = function () {
+                        document.getElementById("solution-example2").style.display = "block";
+                    }
+
+                </script>
+
+
+</body>
+
+</html>
