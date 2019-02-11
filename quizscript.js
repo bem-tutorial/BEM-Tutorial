@@ -191,7 +191,7 @@
                 document.getElementById('ausgabe').style.border = 'solid 2px rgb(5, 185, 5)';
                 document.getElementById('tostart').style.display = 'inline';
                 document.getElementById("anzahlfehler").innerHTML = "Du hast " + fehler +
-                    " Fehler und eine Fehlerquote von " + fehlerquote + "%, du kannst das Quiz jetzt wiederholen wenn du möchtst. 😉";
+                    " Fehler und eine Fehlerquote von " + fehlerquote + "%, du kannst das Quiz jetzt wiederholen wenn du möchtest. 😉";
 
             } else {
 
